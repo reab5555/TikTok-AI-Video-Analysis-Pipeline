@@ -97,10 +97,6 @@ The following sample graphs visually represent important insights from the TikTo
   </tr>
 </table>
 
-The first chart shows four line graphs depicting average engagement metrics (plays, likes, shares, comments) in relation to video duration. Each graph plots a specific metric against video length in seconds.
+The first chart shows four line graphs depicting average engagement metrics (plays, likes, shares, comments) in relation to video duration. Each graph plots a specific metric against video length in seconds. We can see that on average, videos with around 22 seconds of duration yield the highest engagement metrics.
 
 The second chart contains four scatter plots examining the correlation between the videos average unexpectedness rating the AI gave to the videos and the videos average engagement metrics (plays, likes, shares, comments). Each plot shows individual video data points and includes a trend line and Spearkman correlation coefficient (ρ).
-
-
-## Conclusion
-This project showcases an integration of cloud services to transform TikTok video data into a structured format that blends both hard engagement metrics and soft AI-derived insights. The pipeline not only aids in assessing video performance but also offers a novel way of interpreting video content through the lens of audience surprise and emotional engagement. We can see that on average, videos with around 20 seconds of duration yield the highest engagement metrics.
