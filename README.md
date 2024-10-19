@@ -80,5 +80,27 @@ Through multiple iterations, the process logs various settings and configuration
 
 The LLM validation process effectively ensures the reliability of AI-generated insights, essential for integrating these novel metrics with traditional engagement KPIs. Each step of this process contributes to refining the AI model, ensuring that the AI-derived metrics are both meaningful and actionable in the context of video content analysis.
 
+The following sample graphs visually represent important insights from the TikTok video engagement analysis.
+
+<table>
+  <tr>
+    <td>
+      <table>
+        <img src="appendix/chart_1.png" width="300">
+      </table>
+    </td>
+    <td>
+      <table>
+        <img src="appendix/chart_2.png" width="300">
+      </table>
+    </td>
+  </tr>
+</table>
+
+The first chart shows four line graphs depicting average engagement metrics (plays, likes, shares, comments) in relation to video duration. Each graph plots a specific metric against video length in seconds.
+
+The second chart contains four scatter plots examining the correlation between the videos average unexpectedness rating the AI gave to the videos and the videos average engagement metrics (plays, likes, shares, comments). Each plot shows individual video data points and includes a trend line and Spearkman correlation coefficient (ρ).
+
+
 ## Conclusion
 This project showcases an integration of cloud services to transform TikTok video data into a structured format that blends both hard engagement metrics and soft AI-derived insights. The pipeline not only aids in assessing video performance but also offers a novel way of interpreting video content through the lens of audience surprise and emotional engagement.
