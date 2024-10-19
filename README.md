@@ -80,6 +80,8 @@ Through multiple iterations, the process logs various settings and configuration
 
 The LLM validation process effectively ensures the reliability of AI-generated insights, essential for integrating these novel metrics with traditional engagement KPIs. Each step of this process contributes to refining the AI model, ensuring that the AI-derived metrics are both meaningful and actionable in the context of video content analysis.
 
+## Insights Demonstration
+
 The following sample graphs visually represent important insights from the TikTok video engagement analysis. we used around 120 video samples for this exemplary purpose.
 
 <table>
