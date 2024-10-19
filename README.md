@@ -86,12 +86,12 @@ The following sample graphs visually represent important insights from the TikTo
   <tr>
     <td>
       <table>
-        <img src="appendix/chart_1.png" width="300">
+        <img src="appendix/chart_1.png" width="400">
       </table>
     </td>
     <td>
       <table>
-        <img src="appendix/chart_2.png" width="300">
+        <img src="appendix/chart_2.png" width="400">
       </table>
     </td>
   </tr>
