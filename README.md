@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project is designed to build a comprehensive analytics pipeline using Google Cloud for evaluating TikTok videos based on various engagement KPIs and AI-derived analyzed video content metrics such as unexpected or surprising elements. This pipeline effectively integrates video data extraction, storage, transformation, AI processing, and data warehousing.
+This project builds an analytics pipeline on Google Cloud to evaluate TikTok videos. It integrates data extraction, storage, AI processing, and warehousing to analyze engagement KPIs and AI-derived content metrics, including surprising elements.
 
 ## Overview
 
