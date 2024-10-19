@@ -10,7 +10,7 @@ The primary goal of this project is to construct a robust data pipeline capable 
 
 **Data Consolidation and Storage:** Collect raw video data and metadata from the TikTok API, storing them efficiently in the highly scalable Google Cloud Storage. This forms the basis for subsequent data processing and analytical ventures.
 
-**AI-Driven Video Analysis:** Leverage the Gemini LLM via Vertex AI to extract nuanced interpretations of videos, focusing on ratings of unexpectedness and emotional intensity. By capturing these subtle metrics, the aim is to enrich the analytical narrative beyond standard engagement figures.
+**AI-Driven Video Analysis:** Leverage the Gemini LLM via Vertex AI to extract nuanced interpretations of videos, focusing on ratings of unexpectedness.
 
 **Data Transformation and Warehousing:** Transform the raw and AI-processed data into structured formats suitable for comprehensive analysis. This involves merging AI outputs with video metadata into a star schema within BigQuery, where data is organized to optimize efficiency and accessibility for analytical tasks.
 
@@ -20,10 +20,8 @@ Ultimately, the project endeavors to provide a unique insight into the impact of
 
 ### Google Cloud Services   
 Storage: Google Cloud Storage is used to house raw video files and their metadata, facilitating subsequent processing phases.   
-Vertex AI: Utilized for running the Gemini LLM model, performing video analysis by generating synthetic insights on emotional intensity and unexpectedness ratings.   
+Vertex AI: Utilized for running the Gemini LLM model, performing video analysis by generating synthetic insights on unexpectedness ratings.   
 BigQuery: Acts as the data warehouse where processed data is loaded. It supports the creation of a star schema to store transformed data combining both TikTok metadata and AI-generated insights.   
-
-Google Cloud Client Libraries: Specifically, storage and bigquery packages for interacting with Google Cloud services.
 
 ## Detailed Pipeline Flow
 
@@ -31,7 +29,7 @@ Google Cloud Client Libraries: Specifically, storage and bigquery packages for i
 The TikTok API is used to fetch videos and metadata which are stored in a Google Cloud Storage bucket. Video files are downloaded and directly uploaded into GCS.
 
 ### AI Processing 
-The Vertex AI platform is set up with the Gemini LLM, analyzing individual video files. The AI model is tasked with determining metrics such as unexpectedness, emotional intensity, and expectation gaps using structured prompts. These insights are produced in a JSON schema format, ensuring interoperability with subsequent data processing tools.
+The Vertex AI platform is set up with the Gemini LLM, analyzing individual video files. The AI model is tasked with determining metrics such as unexpectedness, predicted emotional reponse intensity, and expectation gaps using structured prompts. These insights are produced in a JSON schema format, ensuring interoperability with subsequent data processing tools.
 
 ### Data Transformation and Loading:   
 Processed insights from the Gemini LLM, along with TikTok metadata, are transferred to a BigQuery data warehouse where data is organized into a star schema. The schema includes dimension tables (dim_user, dim_video, dim_lang) and a fact table (fact_video_analytics), capturing both engagement KPIs and AI-derived metrics.
