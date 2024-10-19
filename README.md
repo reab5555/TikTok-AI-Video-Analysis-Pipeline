@@ -1,3 +1,5 @@
+<img src="appendix/icon.webp" width="100">
+
 # TikTok Analytics Pipeline
 
 ## Introduction
