@@ -103,4 +103,4 @@ The second chart contains four scatter plots examining the correlation between t
 
 
 ## Conclusion
-This project showcases an integration of cloud services to transform TikTok video data into a structured format that blends both hard engagement metrics and soft AI-derived insights. The pipeline not only aids in assessing video performance but also offers a novel way of interpreting video content through the lens of audience surprise and emotional engagement.
+This project showcases an integration of cloud services to transform TikTok video data into a structured format that blends both hard engagement metrics and soft AI-derived insights. The pipeline not only aids in assessing video performance but also offers a novel way of interpreting video content through the lens of audience surprise and emotional engagement. We can see that on average, videos with around 20 seconds of duration yield the highest engagement metrics.
