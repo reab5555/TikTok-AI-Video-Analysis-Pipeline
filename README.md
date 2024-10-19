@@ -6,7 +6,7 @@ This project is designed to build a comprehensive analytics pipeline using Googl
 
 ## Overview
 
-The primary goal of this project is to construct a robust data pipeline capable of providing insightful analytics on TikTok videos by examining both engagement metrics and AI-generated interpretative insights. Specifically, the project seeks to understand whether the conceptual elements of surprise and emotional intensity in video content correlate with traditional engagement KPIs such as views, likes, shares, and comments. To achieve this, the project integrates several cutting-edge technologies and methodologies:
+The primary goal of this project is to construct a robust data pipeline capable of providing insightful analytics on TikTok videos by examining both engagement metrics and AI-generated interpretative insights. Specifically, the project seeks to understand whether the conceptual elements of surprise that violet the viewers expectations in video content correlate with traditional engagement KPIs such as views, likes, shares, and comments. To achieve this, the project integrates several cutting-edge technologies and methodologies:
 
 **Data Consolidation and Storage:** Collect raw video data and metadata from the TikTok API, storing them efficiently in the highly scalable Google Cloud Storage. This forms the basis for subsequent data processing and analytical ventures.
 
