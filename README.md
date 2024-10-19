@@ -80,7 +80,7 @@ Through multiple iterations, the process logs various settings and configuration
 
 The LLM validation process effectively ensures the reliability of AI-generated insights, essential for integrating these novel metrics with traditional engagement KPIs. Each step of this process contributes to refining the AI model, ensuring that the AI-derived metrics are both meaningful and actionable in the context of video content analysis.
 
-* However, we find that not using any knowledge documents and RAG technics yields the best output results.
+* However, we found that not using any knowledge documents and RAG technics yields the best output results, so we chose not to utilize them.
 
 ## Insights Demonstration
 
