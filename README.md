@@ -56,7 +56,7 @@ The resulting structured tables allow for in-depth analysis of how unexpectednes
 
 The LLM validation process is a critical component of this project, designed to ensure that the AI-generated metrics on video content, specifically unexpectedness and emotional intensity, are reliable and accurate. Utilized within this framework are advanced techniques and methodologies, as depicted in the accompanying diagram.
 
-<img src="appendix/llm_varification.png" width="400">
+<img src="appendix/llm_varification.png" width="300">
 
 ### Input Data Preparation
 The process starts with the collection of a set of pre-labeled videos. These videos have already been assessed and rated by human evaluators, establishing a benchmark for unexpectedness and emotional intensity. These human-rated videos serve as the ground truth for the LLM validation.
