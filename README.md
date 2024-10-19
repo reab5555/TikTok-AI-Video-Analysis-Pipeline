@@ -1,4 +1,4 @@
-# TikTok Analysis Pipeline
+# TikTok Analytics Pipeline
 
 ## Introduction
 
