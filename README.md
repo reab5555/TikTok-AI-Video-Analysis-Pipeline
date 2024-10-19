@@ -37,6 +37,8 @@ BigQuery: Acts as the data warehouse where processed data is loaded. It supports
         <img src="appendix/normalization.png" width="500">
       </table>
     </td>
+  </tr>
+</table>
 
 ### Data Extraction and Storage 
 The TikTok API is used to fetch videos and metadata which are stored in a Google Cloud Storage bucket. Video files are downloaded and directly uploaded into GCS.
