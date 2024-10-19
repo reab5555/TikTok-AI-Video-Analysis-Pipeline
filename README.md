@@ -1,4 +1,4 @@
-# TikTok Video Data Analysis Pipeline
+# TikTok Analysis Pipeline
 
 ## Introduction
 
