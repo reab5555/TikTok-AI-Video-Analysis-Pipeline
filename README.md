@@ -2,13 +2,13 @@
 
 ## Introduction
 
-This project is designed to build a comprehensive analytics pipeline using Google Cloud for evaluating TikTok videos based on various engagement Key Performance Indicators (KPIs) and AI-derived metrics such as emotional intensity and surprising elements. This pipeline effectively integrates video data extraction, storage, transformation, AI processing, and data warehousing.
+This project is designed to build a comprehensive analytics pipeline using Google Cloud for evaluating TikTok videos based on various engagement KPIs and AI-derived analyzed video content metrics such as unexpected or surprising elements. This pipeline effectively integrates video data extraction, storage, transformation, AI processing, and data warehousing.
 
 ## Overview
 
 The pipeline begins with data extraction from the TikTok API where video files and associated metadata are retrieved. Video content and metadata are stored in Google Cloud Storage (GCS), and extensive processing using both Google Cloud Platform (GCP) services and open-source Python packages follows, turning raw data into meaningful KPIs.   
 
-Google Cloud Services:   
+### Google Cloud Services   
 Storage: Google Cloud Storage is used to house raw video files and their metadata, facilitating subsequent processing phases.   
 Vertex AI: Utilized for running the Gemini LLM model, performing video analysis by generating synthetic insights on emotional intensity and unexpectedness ratings.   
 BigQuery: Acts as the data warehouse where processed data is loaded. It supports the creation of a star schema to store transformed data combining both TikTok metadata and AI-generated insights.   
