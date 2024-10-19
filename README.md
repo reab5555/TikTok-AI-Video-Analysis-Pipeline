@@ -6,7 +6,18 @@ This project is designed to build a comprehensive analytics pipeline using Googl
 
 ## Overview
 
-The pipeline begins with data extraction from the TikTok API where video files and associated metadata are retrieved. Video content and metadata are stored in Google Cloud Storage (GCS), and extensive processing using both Google Cloud Platform (GCP) services and open-source Python packages follows, turning raw data into meaningful KPIs.   
+The primary goal of this project is to construct a robust data pipeline capable of providing insightful analytics on TikTok videos by examining both engagement metrics and AI-generated interpretative insights. Specifically, the project seeks to understand whether the conceptual elements of surprise and emotional intensity in video content correlate with traditional engagement KPIs such as views, likes, shares, and comments. To achieve this, the project integrates several cutting-edge technologies and methodologies:
+
+    Data Consolidation and Storage: Collect raw video data and metadata from the TikTok API, storing them efficiently in the highly scalable Google Cloud Storage. This forms the basis for subsequent data processing and analytical ventures.
+
+    AI-Driven Video Analysis: Leverage the Gemini LLM via Vertex AI to extract nuanced interpretations of videos, focusing on ratings of unexpectedness and emotional intensity. By capturing these subtle metrics, the aim is to enrich the analytical narrative beyond standard engagement figures.
+
+    Data Transformation and Warehousing: Transform the raw and AI-processed data into structured formats suitable for comprehensive analysis. This involves merging AI outputs with video metadata into a star schema within BigQuery, where data is organized to optimize efficiency and accessibility for analytical tasks.
+
+    Insight Derivation and Validation: Use advanced data analysis to explore and quantify the relationship between a video's surprising content and its engagement KPIs. This aspect of the project includes validating AI model outputs against predetermined benchmarks and psychological insights on surprise, achieved through RAG techniques.
+
+Ultimately, the project endeavors to provide a unique insight into the impact of content creativity and emotional resonance on social media engagement. This approach positions the project at the intersection of psychology, data science, and digital marketing, aiming to enhance understanding of audience interactions and content efficacy on platforms like TikTok.
+
 
 ### Google Cloud Services   
 Storage: Google Cloud Storage is used to house raw video files and their metadata, facilitating subsequent processing phases.   
