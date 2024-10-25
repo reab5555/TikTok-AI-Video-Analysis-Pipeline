@@ -33,14 +33,19 @@ def create_and_populate_tables(client, project_id, dataset_id, metadata_table_na
     ai_table_name = "ai_results"
     ai_table_id = f"{project_id}.{dataset_id}.{ai_table_name}"
     schema = [
-        bigquery.SchemaField("id", "INTEGER", mode="REQUIRED"),
-        bigquery.SchemaField("unexpectedness_rating", "INTEGER"),
-        bigquery.SchemaField("emotional_intensity", "INTEGER"),
-        bigquery.SchemaField("timecode", "STRING"),
-        bigquery.SchemaField("expectation_description", "STRING"),
-        bigquery.SchemaField("violation_description", "STRING"),
-        bigquery.SchemaField("expectation_probability", "FLOAT"),
-        bigquery.SchemaField("sexual_content_rating", "INTEGER")
+        bigquery.SchemaField("video_id", "INTEGER", mode="REQUIRED"),
+        bigquery.SchemaField("ai_unexpectedness_rating", "INTEGER"),  # text1
+        bigquery.SchemaField("ai_unexpectedness_duration", "INTEGER"),  # text2
+        bigquery.SchemaField("ai_expectation_violation_description", "STRING"),  # text3
+        bigquery.SchemaField("ai_emotional_intensity", "INTEGER"),  # text4
+        bigquery.SchemaField("ai_positivity", "INTEGER"),  # text5
+        bigquery.SchemaField("ai_negativity", "INTEGER"),  # text6
+        bigquery.SchemaField("ai_expected_desirability", "INTEGER"),  # text7
+        bigquery.SchemaField("ai_unexpected_desirability", "INTEGER"),  # text8
+        bigquery.SchemaField("ai_emotional_spatial_closeness", "INTEGER"),  # text9
+        bigquery.SchemaField("ai_cognitive_interruption", "INTEGER"),  # text10
+        bigquery.SchemaField("ai_perceived_realism", "INTEGER"),  # text11
+        bigquery.SchemaField("ai_sexual_content_rating", "INTEGER")  # text12
     ]
 
     table = bigquery.Table(ai_table_id, schema=schema)
@@ -68,23 +73,20 @@ def create_and_populate_tables(client, project_id, dataset_id, metadata_table_na
     """
     execute_query(client, dim_user_query, "Create dim_user table")
 
-    # Create dim_video table
+    # Create dim_video table - Updated to use video_id instead of id
     dim_video_query = f"""
     CREATE OR REPLACE TABLE `{project_id}.{dataset_id}.dim_video` AS
     SELECT 
         CAST(m.id AS INT64) as video_id, 
         m.text, 
         m.gcs_path, 
-        a.timecode, 
-        a.expectation_description, 
-        a.violation_description,
         TIMESTAMP('{current_timestamp}') as created_at
     FROM `{project_id}.{dataset_id}.{metadata_table_name}` m
-    JOIN `{ai_table_id}` a ON CAST(m.id AS INT64) = a.id;
+    JOIN `{ai_table_id}` a ON CAST(m.id AS INT64) = a.video_id;
     """
     execute_query(client, dim_video_query, "Create dim_video table")
 
-    # Create fact_video_analytics table
+    # Create fact_video_analytics table - Updated to use video_id
     fact_table_query = f"""
     CREATE OR REPLACE TABLE `{project_id}.{dataset_id}.fact_video_analytics` AS
     SELECT 
@@ -98,14 +100,22 @@ def create_and_populate_tables(client, project_id, dataset_id, metadata_table_na
         m.video_plays,
         m.video_bookmarks,
         m.video_comments,
-        a.unexpectedness_rating,
-        a.emotional_intensity,
-        a.expectation_probability,
-        a.sexual_content_rating,
+        a.ai_unexpectedness_rating,
+        a.ai_unexpectedness_duration,
+        a.ai_expectation_violation_description,
+        a.ai_emotional_intensity,
+        a.ai_positivity,
+        a.ai_negativity,
+        a.ai_expected_desirability,
+        a.ai_unexpected_desirability,
+        a.ai_emotional_spatial_closeness,
+        a.ai_cognitive_interruption,
+        a.ai_perceived_realism,
+        a.ai_sexual_content_rating,
         DATE('{current_date}') as analysis_date,
         TIMESTAMP('{current_timestamp}') as created_at
     FROM `{project_id}.{dataset_id}.{metadata_table_name}` m
-    JOIN `{ai_table_id}` a ON CAST(m.id AS INT64) = a.id
+    JOIN `{ai_table_id}` a ON CAST(m.id AS INT64) = a.video_id
     JOIN `{project_id}.{dataset_id}.dim_lang` l ON m.lang = l.lang;
     """
     execute_query(client, fact_table_query, "Create fact_video_analytics table")
@@ -141,8 +151,8 @@ if __name__ == "__main__":
 
     # Define LLM configuration
     config = {
-        "temperature": 0.01,
-        "top_p": 0.99
+        "temperature": 0.5,
+        "top_p": 0.95
     }
 
     # Run generate function

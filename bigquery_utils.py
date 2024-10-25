@@ -33,15 +33,20 @@ def table_exists(client, project_id, dataset_id, table_name):
 def create_ai_table(client, project_id, dataset_id, table_name):
     schema = [
         bigquery.SchemaField("video_id", "INTEGER", mode="REQUIRED"),
-        bigquery.SchemaField("unexpectedness_rating", "INTEGER"),
-        bigquery.SchemaField("emotional_intensity", "INTEGER"),
-        bigquery.SchemaField("timecode", "STRING"),
-        bigquery.SchemaField("expectation_description", "STRING"),
-        bigquery.SchemaField("violation_description", "STRING"),
-        bigquery.SchemaField("expectation_probability", "FLOAT"),
-        bigquery.SchemaField("sexual_content_rating", "INTEGER"),
-        bigquery.SchemaField("created_at", "TIMESTAMP", mode="REQUIRED")
+        bigquery.SchemaField("ai_unexpectedness_rating", "INTEGER"),  # text1
+        bigquery.SchemaField("ai_unexpectedness_duration", "INTEGER"),  # text2
+        bigquery.SchemaField("ai_expectation_violation_description", "STRING"),  # text3
+        bigquery.SchemaField("ai_emotional_intensity", "INTEGER"),  # text4
+        bigquery.SchemaField("ai_positivity", "INTEGER"),  # text5
+        bigquery.SchemaField("ai_negativity", "INTEGER"),  # text6
+        bigquery.SchemaField("ai_expected_desirability", "INTEGER"),  # text7
+        bigquery.SchemaField("ai_unexpected_desirability", "INTEGER"),  # text8
+        bigquery.SchemaField("ai_emotional_spatial_closeness", "INTEGER"),  # text9
+        bigquery.SchemaField("ai_cognitive_interruption", "INTEGER"),  # text10
+        bigquery.SchemaField("ai_perceived_realism", "INTEGER"),  # text11
+        bigquery.SchemaField("ai_sexual_content_rating", "INTEGER")  # text12
     ]
+
     create_bigquery_table(client, project_id, dataset_id, table_name, schema)
 
 
